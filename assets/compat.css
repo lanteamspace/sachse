@@ -1,0 +1,44 @@
+/* Compatibility CSS to restore expected player/footer layout when CDN CSS is missing */
+:root{--accent:#06b6d4;--muted:#64748b;--bg:#0f172a}
+body{background:var(--bg);color:#fff}
+.player-crop{width:100%;max-width:1280px;margin:0 auto;padding:0 1rem;overflow:hidden}
+.player-container{background:#0b1220;border-radius:10px;overflow:hidden;border:1px solid rgba(6,182,212,0.12);}
+.player-frame{position:relative;width:100%;padding-bottom:56.25%;height:0;background:#000}
+.player-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.player-info{padding:1rem;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+/* Provide fallback styles referenced by old ptt.css */
+.player-crop .player-frame{border-radius:6px;overflow:hidden}
+.player-crop .player-frame iframe{display:block}
+
+/* Footer fallback */
+.footer{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);padding:2rem 1rem;border-top:1px solid rgba(6,182,212,0.08);}
+.footer-content{max-width:1280px;margin:0 auto;text-align:center}
+.footer-logo img{height:56px}
+.footer-title{color:var(--accent);font-weight:800;font-size:1.25rem}
+.footer-subtitle{color:#94a3b8;margin-top:.5rem}
+.footer-disclaimer{color:var(--muted);font-size:.85rem;margin-top:1rem;line-height:1.5}
+.footer-links{display:flex;justify-content:center;gap:.75rem;margin-top:1rem;flex-wrap:wrap}
+.footer-link{padding:.4rem .8rem;border-radius:8px;border:1px solid var(--accent);color:var(--accent);background:transparent;text-decoration:none}
+.footer-divider{margin-top:1rem;border-top:1px solid rgba(6,182,212,0.08);padding-top:1rem;color:var(--accent)}
+
+/* Small responsive tweaks */
+@media (max-width:640px){.player-info{padding:.75rem}.footer{padding:1rem}.footer-logo img{height:44px}}
+
+/* Restore original ptt.css player-crop behavior */
+.player-crop{
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	background: #000;
+	border-radius: 1rem;
+}
+
+.player-crop iframe{
+	position: absolute;
+	top: -160px;
+	left: 0;
+	width: 100%;
+	height: calc(100% + 260px);
+	border: 0;
+}

@@ -1,0 +1,138 @@
+<!--
+
+- Website : https://watch.kdz.ct.ws
+- GitHub : https://github.com/kudodzzz/K2KWatch
+(c) 2025 Copyright by Kudodzzz
+
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Thanh Xuân Này Vẫn Là Em - K2KWatch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.kdz.ct.ws/k2kwatch/assets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0f172a; color: #fff; font-family: 'Baloo 2', sans-serif; }
+  .navbar { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 1rem 2rem; border-bottom: 1px solid rgba(34, 211, 238, 0.2); }
+  .navbar-content { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .navbar-logo img { height: 40px; }
+  .navbar-btn { padding: 0.5rem 1.5rem; background: #06b6d4; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+  .navbar-btn:hover { background: #0891b2; }
+  .content-wrapper { max-width: 1280px; margin: 2rem auto; padding: 0 1.5rem; }
+  .player-container { background: #1e293b; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); border: 1px solid rgba(34, 211, 238, 0.2); position: relative; }
+  #player { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+  .player-info { padding: 1.5rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.7) 100%); backdrop-filter: blur(10px); border-top: 1px solid rgba(34, 211, 238, 0.1); }
+  .player-title { font-size: 1.5rem; font-weight: 700; color: #06b6d4; margin-bottom: 0.5rem; }
+  .player-subtitle { font-size: 1.1rem; color: #94a3b8; margin-bottom: 0.25rem; }
+  .player-hint { font-size: 1rem; color: #64748b; }
+  .footer { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-top: 1px solid rgba(34, 211, 238, 0.2); padding: 3rem 2rem; }
+  .footer-content { max-width: 1280px; margin: 0 auto; text-align: center; }
+  .footer-logo img { height: 56px; margin: 0 auto 1rem; }
+  .footer-title { font-size: 1.5rem; font-weight: 900; color: #06b6d4; }
+  .footer-subtitle { color: #94a3b8; margin-top: 0.75rem; }
+  .footer-disclaimer { color: #64748b; font-size: 0.75rem; margin-top: 1rem; line-height: 1.6; }
+  .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .footer-link { padding: 0.5rem 1rem; background: #1e293b; color: #06b6d4; border: 1px solid #06b6d4; border-radius: 8px; font-size: 0.875rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.3s; }
+  .footer-link:hover { background: #06b6d4; color: #0f172a; }
+  .footer-divider { color: #06b6d4; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(34, 211, 238, 0.2); }
+  .footer-copyright { color: #64748b; font-size: 0.75rem; margin-top: 1.5rem; }
+  @keyframes radar { 0% { transform: translateX(-150%) skewX(-15deg); } 100% { transform: translateX(250%) skewX(-15deg); } }
+  button:hover { letter-spacing: 0.05em; }
+</style>
+  <link rel="stylesheet" href="/assets/compat.css">
+</head>
+
+<body>
+
+<div id="loading" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+  <img src="https://i.postimg.cc/8PxTnNp6/k2kwatch.png" class="w-40 md:w-48 lg:w-56 animate-pulse mb-6" alt="K2KWatch">
+  <div role="status" class="mt-2">
+    <svg aria-hidden="true" class="w-10 h-10 animate-spin text-slate-700 fill-cyan-400" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+      <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+    </svg>
+    <span class="sr-only">Loading...</span>
+  </div>
+  <p class="mt-6 text-cyan-400 tracking-widest font-bold text-center">Khi bạn ấn dừng tại video này, nếu bạn bật trình chặn quảng cáo hãy tắt nó đi. Chỉ một số nội dung trên web của chúng mình gặp tình trạng này.</p>
+</div>
+
+<nav class="navbar">
+  <div class="navbar-content">
+    <div class="navbar-logo">
+      <a href="/"><img src="https://i.postimg.cc/8PxTnNp6/k2kwatch.png" alt="K2KWatch"></a>
+    </div>
+    <a href="/" class="navbar-btn">Trang chủ</a>
+  </div>
+</nav>
+
+<main class="content-wrapper">
+  <div class="player-container">
+    <div id="player" class="relative w-full aspect-video">
+      <!-- js se add vo day -->
+    </div>
+    <button onclick="loadVideo()" class="group relative inline-flex items-center justify-center px-10 py-4 font-mono font-bold text-cyan-400 transition-all duration-500 rounded-lg bg-black/40 backdrop-blur-xl border border-cyan-500/50 hover:text-white hover:border-fuchsia-500 shadow-[0_0_15px_rgba(34,211,238,0.2)] hover:shadow-[0_0_30px_rgba(217,70,239,0.6)] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden">
+      <span class="absolute inset-0 translate-y-full group-hover:translate-y-0 bg-gradient-to-t from-fuchsia-600/20 via-cyan-600/20 to-transparent transition-transform duration-500"></span>
+      <span class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+        <span class="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(34,211,238,0.4)_50%,transparent_100%)] w-1/2 h-full -skew-x-12 animate-[radar_2s_infinite]"></span>
+      </span>
+      <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-cyan-400 transition-all group-hover:border-fuchsia-400 group-hover:w-4 group-hover:h-4"></span>
+      <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-cyan-400 transition-all group-hover:border-fuchsia-400 group-hover:w-4 group-hover:h-4"></span>
+      <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-cyan-400 transition-all group-hover:border-fuchsia-400 group-hover:w-4 group-hover:h-4"></span>
+      <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-cyan-400 transition-all group-hover:border-fuchsia-400 group-hover:w-4 group-hover:h-4"></span>
+      <span class="relative flex items-center gap-4">
+        <span class="relative flex">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-20"></span>
+          <span class="relative text-xl">▶</span>
+        </span>
+        <span class="uppercase tracking-[0.3em] text-sm drop-shadow-[0_0_8px_rgba(34,211,238,1)] group-hover:drop-shadow-[0_0_8px_rgba(217,70,239,1)]">Initiate Video</span>
+      </span>
+      <span class="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></span>
+    </button>
+    <div class="player-info">
+      <div class="player-title">Thanh Xuân Này Vẫn Là Em</div>
+      <div class="player-subtitle">Full Version - Thuyết Minh By K2KWatch Vietsub Team</div>
+      <div class="player-hint">Nếu video không load được, hãy thử đổi server.</div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="https://i.postimg.cc/8PxTnNp6/k2kwatch.png" alt="K2KWatch">
+    </div>
+    <div class="footer-title">K2KWatch</div>
+    <div class="footer-subtitle">Xịn xò • Mượt mà • Đẳng cấp :3</div>
+    <div class="footer-disclaimer">Chúng tôi từ chối mọi trách nhiệm liên quan đến nội dung hiển thị hoặc tồn tại trên trang. Tất cả video và dữ liệu tại đây đều được tổng hợp từ các nguồn phổ biến trên Internet và không thuộc quyền sở hữu hay kiểm soát của chúng tôi. Chúng tôi không cung cấp dịch vụ phát trực tuyến chính thức. Nếu bạn cho rằng quyền lợi của mình bị ảnh hưởng, vui lòng liên hệ với chúng tôi — chúng tôi sẽ xử lý và gỏ bỏ nội dung vi phạm một cách kịp thời.</div>
+    <div class="footer-links">
+      <a href="https://github.com/kudodzzz" class="footer-link"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://discord.com/users/810874313372467210" class="footer-link"><i class="fa-brands fa-discord"></i> Discord</a>
+      <a href="https://discord.com/invite/WYMXvrnpz2" class="footer-link"><i class="fa-brands fa-discord"></i> Discord Server</a>
+      <a href="/" class="footer-link"><i class="fa-solid fa-house"></i> Trang chủ</a>
+    </div>
+    <div class="footer-divider"><div style="margin-top: 1rem;"><img src="https://cdn.kdz.ct.ws/k2kwatch/assets/vn_flag.svg" alt="Vietnam" style="height: 20px; display: inline; margin-right: 0.5rem; vertical-align: middle;"><span>Hoàng Sa & Trường Sa là của Việt Nam!</span></div></div>
+    <div class="footer-copyright">© 2025 K2KWatch | Made by Kudodzz with love. ❤️</div>
+  </div>
+</footer>
+
+<script>
+function loadVideo(){
+  const encoded = "PGlmcmFtZSBzcmM9Ii8vc2hvcnQuaWN1L2x5cTA2c2xUcyIgY2xhc3M9ImFic29sdXRlIGluc2V0LTAgdy1mdWxsIGgtZnVsbCByb3VuZGVkLTJ4bCIgZnJhbWVib3JkZXI9IjAiIGFsbG93ZnVsbHNjcmVlbj48L2lmcmFtZT4=";
+  const decoded = atob(encoded);
+  document.getElementById("player").innerHTML = decoded;
+}
+</script>
+
+<script src="https://cdn.kdz.ct.ws/k2kwatch/assets/script.js"></script>
+
+  <script src="/assets/compat.js"></script>
+</body>
+</html>
