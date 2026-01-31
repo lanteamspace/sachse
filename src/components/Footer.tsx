@@ -52,7 +52,7 @@ const Footer = () => {
 
         <div className="flex items-center justify-center gap-3 mt-10 py-3 px-6 bg-red-600/20 border border-red-500/50 rounded-full w-fit mx-auto">
           <img
-            src="//cdn.kdz.ct.ws/k2kwatch/assets/vn_flag.svg"
+            src="//cdn.kdz.gt.tc/k2kwatch/assets/vn_flag.svg"
             alt="Vietnam"
             className="w-6 h-auto rounded"
           />
